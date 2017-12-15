@@ -33,7 +33,8 @@ class: middle
 ???
 Guten Morgen, mein Name ist Martine Lenders. Ich arbeite an der Freien
 Universität Berlin als wissenschaftliche Mitarbeiterin und ich bin eine der
-Hauptentwicklerinnen des Betriebsystems RIOT — The friendly IoT OS!
+Hauptentwicklerinnen des Betriebsystems RIOT — The friendly operating system for
+the IoT!
 
 In meinem Talk möchte ich euch dieses kurz vorstellen.
 
@@ -46,11 +47,13 @@ In meinem Talk möchte ich euch dieses kurz vorstellen.
 Die erste Frage, die die meisten von euch sich jetzt stellen ist wahrscheinlich
 "Warum wird ein extra Betriebsystem für das Internet der Dinge benötigt?"
 
-Die Antwort ist einfach: Neben Einplatinen-Computern, wie dem Raspberry Pi,
+Die Antwort ist einfach: Neben Einplatinen-Computern, wie etwa dem Raspberry Pi,
 spielt sich das Internet der Dinge vorrangig auf Mikrokontrollern ab. Diese
 haben allerdings nur wenige Kilobyte an RAM und ROM. Die größten Platformen die
 RIOT unterstützt, haben etwa 1 Megabyte, das sind aber für unsere Verhältnisse
 schon Supercomputer.
+
+Und ja, RIOT läuft auch auf einem Arduino! ...
 
 ---
 
@@ -60,23 +63,51 @@ schon Supercomputer.
 
 - Requires only a few kB of RAM/ROM
 - Code once & run on heterogeneous IoT hardware
-    + 8-bit (e.g. AVR)
-    + 16-bit (e.g. MSP430)
-    + 32-bit (e.g. ARM Cortex-M, MIPS)
-- Support for ~100 platforms
+    + 8-bit (e.g. AVR), 16-bit (e.g. MSP430),<br />32-bit (e.g. ARM Cortex-M, MIPS)
+- Support for ~100 platforms, e.g.
+    + Arduino, ST Nucleo, Adafruit Feather, IKEA TRÅDFRI, …
 - Support for tooling and several libraries out-of-the-box
 - Peer-reviewed, LGPLv2.1-licensed code
 - Grassroots governance (> 150 contributors)
 
+???
+
+... Denn wenn auf euerem Gerät kein Linux läuft, lasst RIOT auf ihm laufen.
+
+* RIOT benötigt nur wenige Kilobyte of RAM and ROM (in seiner
+  Minimalkonfiguration ist ein RIOT-Image etwa ~4kB groß für Arduino)
+* RIOT kann auf einer Vielzahl heterogener Geräte laufen, wie z.B.
+  AVR (das Instruction Set, dass Arduino verwendet), MSP430 oder ARM Cortex-M
+  und MIPS.
+* Das heißt, ein Programm, das ihr einmal geschrieben habt ist
+  beliebig portierbar zu einer der an die 100 Plattformen die wir unterstützen.
+  Dazu gehören auch einige bekannte Maker-Plattformen, wie: Arduino, ST Nucleo,
+  Adafruit Feather und IKEA's Smart-Glühbirne TRÅDFRI.
+* Dabei versucht es RIOT einem die Arbeit so leicht wie möglich zu machen und
+  unterstützt Standard-Open-Source Tooling und bekannte IoT-Bibliotheken
+  out-of-the-box.
+* All das wird als ein peer-reviewter und LGPLv2.1-lizensierter code bereit
+  gestellt
+* und von einer Grassroots-basierten Community unterstützt.
+
+
 ---
 
-# Kernel Fact Sheet
+# Technical Fact Sheet
 
 * μ-kernel-like architecture (for *robustness*)
 * Modular design (for *adaptivity*)
 * Tickless scheduler (for *energy efficiency*)
 * Deterministic, preemptive O(1) scheduling (for *real-time capabilities*)
 * Low latency interrupt handling (for *reactivity*)
+
+???
+
+Für Interessierte jetzt ein paar technische Details:
+
+RIOT basiert auf einer Mikrokernel-artigen Architektur mit modularem Design.
+
+...
 
 ---
 
@@ -88,6 +119,21 @@ class: last-slide
 * https://riot-os.org/
 * https://api.riot-os.org/
 * https://github.com/RIOT-OS/Tutorials
+
+???
+
+Und das war's auch schon. Ich hoffe ich konnte Euer Interesse wecken.
+Wenn dem so ist, könnt ihr euch gerne durch unsere Webseite und
+API-Dokumentation wühlen und unsere Tutorials durchgehen, für die Ihr außer
+eurem Rechner nichtmal Hardware braucht.
+
+Die Links findet ihr hier auf den Folien.
+
+Ich danke Euch für Eure Aufmerksamkeit.
+
+Gibt es Fragen?
+
+
 
     </textarea>
     <script src="js/remark-0.14.0.min.js">
