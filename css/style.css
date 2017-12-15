@@ -71,7 +71,7 @@ em {
 }
 #slide-title-slide h1 {
   background-image: url("../figs/riot-logo-title.svg");
-  background-position: top left;
+  background-position: top center;
   background-repeat: no-repeat;
   color: #e1e1e1;
   font-size: 44pt;
