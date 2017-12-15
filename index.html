@@ -4,6 +4,19 @@
     <title>RIOT &mdash; The friendly IoT OS</title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <style>
+      blockquote {
+        background-color: #1d1f21;
+        margin: 0;
+      }
+      blockquote p {
+        padding: .5em;
+        text-align: center;
+      }
+      img {
+        width: 100%;
+      }
+    </style>
   </head>
   <body>
     <textarea id="source">
@@ -14,32 +27,63 @@ class: middle
 # The friendly IoT OS
 ## Martine Lenders
 
+???
+Guten Morgen, mein Name ist Martine Lenders. Ich arbeite an der Freien
+Universität Berlin als wissenschaftliche Mitarbeiterin und ich bin eine der
+Hauptentwicklerinnen des Betriebsystems RIOT — The friendly IoT OS!
+
+In meinem Talk möchte ich euch dieses kurz vorstellen.
+
 ---
 
-# Agenda
+# Why?
+![Why RIOT?](figs/why-riot.png)
 
-1. Introduction
-2. Deep-*dive*
-3. ...
+???
+Die erste Frage, die die meisten von euch sich jetzt stellen ist wahrscheinlich
+"Warum wird ein extra Betriebsystem für das Internet der Dinge benötigt?"
+
+Die Antwort ist einfach: Neben Einplatinen-Computern, wie dem Raspberry Pi,
+spielt sich das Internet der Dinge vorrangig auf Mikrokontrollern ab. Diese
+haben allerdings nur wenige Kilobyte an RAM und ROM. Die größten Platformen die
+RIOT unterstützt, haben etwa 1 Megabyte, das sind aber für unsere Verhältnisse
+schon Supercomputer.
 
 ---
 
-# Introduction
-This is code
+# RIOT in a Nutshell
 
-```C
-#include <stdio.h>
+> “If your device cannot run Linux, run RIOT!”
 
-int main(int argc, char **argv) {
-    printf("Hello, World!");
-    return 0;
-}
-```
+- Requires only a few kB of RAM/ROM
+- Code once & run on heterogeneous IoT hardware
+    + 8-bit (e.g. AVR)
+    + 16-bit (e.g. MSP430)
+    + 32-bit (e.g. ARM Cortex-M, MIPS)
 
-```py
-if __name__ == "__main__":
-    print("Hello, Camelot!")
-```
+---
+
+# RIOT Fact Sheet
+
+* μ-kernel-like architecture (for *robustness*)
+* Modular design (for *adaptivity*)
+* Tickless scheduler (for *energy efficiency*)
+* Deterministic O(1) scheduling (for *real-time capabilities*)
+* Low latency interrupt handling (for *reactivity*)
+* Preemptive multi-threading & powerful IPC
+* Efficient hardware abstraction
+* Full featured, extendable network-stacks
+* Peer-reviewed, LGPLv2.1-licensed code
+
+---
+
+background-image: url("figs/IMG_0646_02.jpg")
+class: last-slide
+
+# Getting started
+
+* https://api.riot-os.org/
+* https://github.com/RIOT-OS/Tutorials
 
     </textarea>
     <script src="js/remark-0.14.0.min.js">
