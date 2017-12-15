@@ -16,6 +16,9 @@
       img {
         width: 100%;
       }
+      .last-slide ul {
+        padding-left: .7em;
+      }
     </style>
   </head>
   <body>
@@ -25,7 +28,7 @@ name: title-slide
 class: middle
 
 # The friendly IoT OS
-## Martine Lenders
+## Martine Lenders ([m.lenders@fu-berlin.de](mailto:m.lenders@fu-berlin.de))
 
 ???
 Guten Morgen, mein Name ist Martine Lenders. Ich arbeite an der Freien
@@ -60,20 +63,20 @@ schon Supercomputer.
     + 8-bit (e.g. AVR)
     + 16-bit (e.g. MSP430)
     + 32-bit (e.g. ARM Cortex-M, MIPS)
+- Support for ~100 platforms
+- Support for tooling and several libraries out-of-the-box
+- Peer-reviewed, LGPLv2.1-licensed code
+- Grassroots governance (> 150 contributors)
 
 ---
 
-# RIOT Fact Sheet
+# Kernel Fact Sheet
 
 * μ-kernel-like architecture (for *robustness*)
 * Modular design (for *adaptivity*)
 * Tickless scheduler (for *energy efficiency*)
-* Deterministic O(1) scheduling (for *real-time capabilities*)
+* Deterministic, preemptive O(1) scheduling (for *real-time capabilities*)
 * Low latency interrupt handling (for *reactivity*)
-* Preemptive multi-threading & powerful IPC
-* Efficient hardware abstraction
-* Full featured, extendable network-stacks
-* Peer-reviewed, LGPLv2.1-licensed code
 
 ---
 
@@ -82,6 +85,7 @@ class: last-slide
 
 # Getting started
 
+* https://riot-os.org/
 * https://api.riot-os.org/
 * https://github.com/RIOT-OS/Tutorials
 

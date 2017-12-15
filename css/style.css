@@ -90,6 +90,6 @@ em {
   background-size: contain;      /* applied using JavaScript only if background-image is larger than slide */
   color: #000;
 }
-.last-slide h1,a {
+.last-slide h1, .last-slide a {
   color: #000;
 }
