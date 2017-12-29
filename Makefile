@@ -8,7 +8,7 @@
 all: 34c3-lighning-talk-riot.pdf
 
 34c3-lighning-talk-riot.pdf: 34c3-lighning-talk-riot-orig.pdf
-	@pdfcrop --margins "0 0 -1 -1" $< $@
+	@pdfcrop --margins "0 -1 0 -1" $< $@
 
 34c3-lighning-talk-riot-orig.pdf: index.html $(wildcard figs/* css/*)
 	@wkhtmltopdf $< $@
