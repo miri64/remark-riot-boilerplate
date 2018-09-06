@@ -5,16 +5,16 @@
 
 .PHONY: all
 
-all: 34c3-lighning-talk-riot.pdf
+all: maintainer-tutorial.pdf
 
-34c3-lighning-talk-riot.pdf: 34c3-lighning-talk-riot-orig.pdf
+maintainer-tutorial.pdf: maintainer-tutorial-orig.pdf
 	@pdfcrop --margins "0 -1 0 -1" $< $@
 
-34c3-lighning-talk-riot-orig.pdf: index.html $(wildcard figs/* css/*)
+maintainer-tutorial-orig.pdf: index.html $(wildcard figs/* css/*)
 	@wkhtmltopdf $< $@
 
 clean:
-	rm 34c3-lighning-talk-riot.pdf 34c3-lighning-talk-riot-orig.pdf
+	rm maintainer-tutorial.pdf maintainer-tutorial-orig.pdf
 
 # vim:ft=make
 #
