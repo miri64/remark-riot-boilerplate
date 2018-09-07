@@ -5,6 +5,15 @@
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <style>
+      blockquote {
+        background-color: #1d1f21;
+        margin: 30% 0;
+      }
+      blockquote p {
+        font-size: 125%;
+        padding: .5em;
+        text-align: center;
+      }
       #slide-outline > ol {
         font-size: 125%;
         line-height: 125%;
@@ -21,8 +30,8 @@ name: title-slide
 class: middle center
 
 # How to be a Good Maintainer?
-## Martine Lenders ([m.lenders@fu-berlin.de](mailto:m.lenders@fu-berlin.de))
-## Hauke Petersen ([hauke.petersen@fu-berlin.de](mailto:hauke.petersen@fu-berlin.de))
+## Martine Lenders ([@miri64](https://github.com/miri64))
+## Hauke Petersen ([@haukepetersen](https://github.com/haukepetersen))
 
 ---
 
@@ -40,6 +49,7 @@ name: outline
 # Introduction
 
 * Goal: Make us all better maintainer
+  - Find minimum maintaining standards
 * Main objective of a maintainer: *Quality* assurance (review)
   - *Code* Quality
   - *Functionality*
@@ -51,7 +61,14 @@ name: outline
 # Maintainer Guidelines
 
 * [Maintainer Guidelines @ GitHub Repo](https://ogithub.com/RIOT-OS/RIOT/blob/master/MAINTAINING.md)
-* Follow them step by step (skip steps if clearly unnecessary)
+* Follow them step by step (skip steps if clearly unnecessary):
+
+  1. Fundamentals
+  2. Code design
+  3. Testing
+  4. Coding conventions
+  5. Documentation
+
 * Can always be adapted via PR (requires 2 ACKs!)
 
 ---
@@ -93,7 +110,7 @@ name: outline
 
 ---
 
-# 2. Code design review
+# 2. Code design
 
 1. Code duplication
 --
@@ -123,12 +140,16 @@ name: outline
 
 ---
 
+# 3. Testing
+
+- Run tests on native (if applicable) + few selected boards
+- Follow testing instructions given by PR (see 1.8)
+
+> Challenge them, be creative, try to break it 😉
+
+---
+
 # The last mile
-
-### 3. Testing:
-- Run tests on native + few selected boards
-
---
 
 ### 4. Coding conventions
 - Can be *aided* by tools like `uncrustify` or `vera++`
@@ -146,6 +167,7 @@ name: outline
 # Interaction
 
 * Be *responsive*, be *helpful*, be *friendly*
+    - (See our [Code of Conduct](https://github.com/RIOT-OS/RIOT/blob/master/CODE_OF_CONDUCT.md))
 * Ask other maintainers for help for parts you don't know about
 * Mark in your ACK what you ACK'd
 
@@ -154,6 +176,20 @@ name: outline
 class: middle center
 
 # Let's discuss!
+
+???
+
+TODO
+
+Thesen:
+
+- Beginner friendly vs sophistication?
+    - Newbies vs Industry integration?
+- Developer's creative freedom
+    - Rules vs "common" sense
+- Long discussions about academic problems (vs practical relevance?)
+    - (priority inversion?)
+- Common sense on feature selection
 
     </textarea>
     <script src="js/remark-0.14.0.min.js">
