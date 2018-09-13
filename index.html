@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RIOT &mdash; The friendly IoT OS</title>
+    <title>RIOT + DHCPv6</title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <style>
@@ -34,277 +34,52 @@
 name: title-slide
 class: middle center
 
-# The friendly OS for the IoT
+# DHCPv6 for RIOT @ IETF 101 hackathon
 ## Martine Lenders ([m.lenders@fu-berlin.de](mailto:m.lenders@fu-berlin.de))
-
-???
-
-* Hello, my name is Martine Lenders.
-* I'm working as a researcher for Freie Universität Berlin and
-* I'm one of the main contributors to the RIOT operating system --
-* the friendly operating system for the Internet of Things,
-* which I like to present you today.
+## https://riot-os.org
 
 ---
 
-class: middle center
+# Goals
+- Provide minimal implementation for prefix delegation for RIOT
+  (IoT OS)
+- Basis: [draft-ietf-dhc-rfc3315bis-12](https://tools.ietf.org/html/draft-ietf-dhc-rfc3315bis-12)
+- Motivation:
+    * prefix configuration on 6Lo border router
+      (currently implemented as quick-fix hack "UHCP")
+- Required client behavior for:
+    * SOLICIT, ADVERTISE, REQUEST, REPLY, RENEW
 
-# Why RIOT?
+---
+# Set-up
 
-???
+Very simple set-up:
 
-So the first questions you might want to ask:
+<img style="width: 110%" src="figs/dhcpv6-setup.svg" />
 
-* Why a dedicated operating system for the Internet of Things and
-* why RIOT?
+(RIOT native == Run RIOT as a Linux process)
 
 ---
 
-class: center-img
+# What did we manage to do?
+- SOLICIT &#10004;, ADVERTISE &#10004;, REQUEST &#10004;
 
-# IoT today
-![Propriatary IoT](figs/prop-iot.svg)
-
-???
-
-* Well if we look at the Internet of Things today we see that basically every
-manufacturer uses there own dedicated environment
-* sometimes standardized, sometimes proprietary
-* but almost always over some external cloud infrastructure
-* and there is no way to - if you want to - let for example interact your light
-  switch with your heater.
+<img style="width: 110%" src="figs/dhcpv6-wireshark.png" />
 
 ---
 
-class: center-img
-
-# Our vision
-![Our vision of the IoT](figs/riot-iot.svg)
-
-???
-
-* Our vision is build around free and open source software (please ignore the
-android icon here) and build upon open and well-specified protocols
-* Since these led in our experience to the success story of both the Internet
-  and the UNIX-oid operating systems
-* So what we want is a *true* Inter*net* of Things: A network of network of
-  Things which are able to communicate with each other without proprietary
-  Web-services in-between
-* one of our contributors even coined the term "blue sky computing" because it
-  has no cloud ;-)
+# Lessons learned
+- Don't get lost in details
+- When in doubt: ask the draft's authors ;-) (thanks Tomek for all the help)
 
 ---
 
-name: why-riot
-class: center-img
+# Further steps
+- Clean-up implementation
+- Finish implementation of prefix delegation
+- Provide support for further DHCPv6 features
+- Current code already PR'd to RIOT: https://github.com/RIOT-OS/RIOT/pull/8796/
 
-# Why a dedicated IoT OS?
-
-![Why RIOT?](figs/why-riot-1.png)
-
-???
-
-But why not use for example Linux?
-
-Well, you all probably know the devices Linux usually runs on, but
-
----
-
-name: why-riot
-class: center-img
-count: false
-
-# Why a dedicated IoT OS?
-
-![Why RIOT?](figs/why-riot-2.png)
-
-???
-
-* but if we look at the devices RIOT supports, you can see that you hardly can
-  fit Linux on them (or only something that isn't really Linux anymore)
-
----
-
-name: why-riot
-class: center-img
-count: false
-
-# Why a dedicated IoT OS?
-
-![Why RIOT?](figs/why-riot-3.png)
-
-???
-
-* On the other hand side, those devices can definitely benefit of our software suite for IP-based
-  Internet protocols I mentioned earlier
-* instead of using bare-metal solutions
-
----
-
-# Why a dedicated IoT OS?
-
-> “If your device cannot run Linux, run RIOT!”
-
-???
-
-So our motto is: "If your device cannot run Linux, run RIOT!", since programming
-an application for RIOT can be very similar to programming an application for
-Linux.
-
----
-
-class: middle center
-
-# What does RIOT bring to me?
-
-???
-
-But if you choose RIOT, what does it bring to you?
-
----
-
-class: center-img
-count: false
-
-# Tooling around RIOT
-
-![Tooling around RIOT](figs/riot-tooling.svg)
-
-???
-
-* Our software is under LGPL and thus free software and also
-* our development processes are build around well-known and freely available
-tools.
-* We explicity do not require to install a full-blown Eclipse suite or our own
-  dedicated IDE on your system to develop software for RIOT
-* Also, we support a variety of platforms. Among those are
-
----
-
-class: center-img
-
-# Variety of platforms supported
-
-![Arduino Uno](figs/arduino-uno.png)
-
-???
-
-The maker's favorites Arduino,
-
----
-
-class: center-img
-count: false
-
-# Variety of platforms supported
-
-![ST Nucleo](figs/st-nucleo.png)
-
-???
-
-ST Nucleo and
-
----
-
-class: center-img
-count: false
-
-# Variety of platforms supported
-
-![Adafruit feather M0](figs/adafruit-feather-m0.png)
-
-???
-
-Adafruit feather,
-
----
-
-class: center-img
-count: false
-
-# Variety of platforms supported
-
-![Calliope mini](figs/calliope-mini.png)
-
-???
-
-The educational platform Calliope mini and
-
----
-
-class: center-img
-count: false
-
-# Variety of platforms supported
-
-![BBC micro bit](figs/bbc-microbit.png)
-
-???
-
-it's British counter-part, the BBC micro bit and, you might have seen on
-hack-a-day
-
----
-
-class: center-img background
-count: false
-background-image: url("figs/ikea-tradfri.png")
-
-# Variety of platforms supported
-
-???
-
-that one of our contributors was able to flash RIOT on IKEA's smart-lightbulb
-TRÅFRI.
-
----
-
-# Some of RIOT's features
-
-* Real-time capable kernel architecture
-* Highly configurable, modular design from ground up
-* Partly POSIX-compliant API
-* Fully-featured IPv6 network stack
-* JavaScript support (via JerryScript interpreter)
-* Support for third-party software via BSD-ports like package management
-
-???
-
-For those interested, here is some random technical background in text:
-
-* we have a real-time capable kernel,
-* highly configurable, modular design from ground up,
-* a partially POSIX-compliant API,
-* a fully-featured IPv6 network stack,
-* JavaScript support, and
-* support for third-party software via a BSD-ports like package management
-  system
-
----
-
-background-image: url("figs/IMG_0646_02.jpg")
-class: background last-slide
-
-# Getting started
-
-* https://riot-os.org/
-* https://api.riot-os.org/
-* https://github.com/RIOT-OS/Tutorials
-* Mailinglists:
-    - devel@riot-os.org
-    - users@riot-os.org
-    - security@riot-os.org
-
-???
-
-So if I was able to spark your interest, please visit us at riot-os.org, read
-our API documentation at api.riot-os.org or have a look at our Tutorials on
-GitHub.
-
-If you want to come in contact with us, we have several mailinglists: The most
-active is our developer mailing list, but we also answer questions on our users
-mailing list. If you notice any vulnerabilities, please confide with us at
-security@riot-os.org.
     </textarea>
     <script src="js/remark-0.14.0.min.js">
     </script>
