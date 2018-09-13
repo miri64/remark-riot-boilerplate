@@ -5,16 +5,16 @@
 
 .PHONY: all
 
-all: maintainer-tutorial.pdf
+all: stream-teaser.pdf
 
-maintainer-tutorial.pdf: maintainer-tutorial-orig.pdf
-	@pdfcrop --margins "0 -1 0 -1" $< $@
+stream-teaser.pdf: stream-teaser-orig.pdf
+	@pdfcrop --margins "-1 -1 -1 -1" $< $@
 
-maintainer-tutorial-orig.pdf: index.html $(wildcard figs/* css/*)
+stream-teaser-orig.pdf: index.html $(wildcard figs/* css/*)
 	@wkhtmltopdf $< $@
 
 clean:
-	rm maintainer-tutorial.pdf maintainer-tutorial-orig.pdf
+	rm stream-teaser.pdf stream-teaser-orig.pdf
 
 # vim:ft=make
 #

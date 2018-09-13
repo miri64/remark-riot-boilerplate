@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>How to be a Good Maintainer?</title>
+    <title>RIOT break</title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <style>
@@ -21,6 +21,9 @@
       img {
         width: 75%;
       }
+      .remark-slide-number {
+        display: none;
+      }
     </style>
   </head>
   <body>
@@ -29,173 +32,15 @@
 name: title-slide
 class: middle center
 
-# How to be a Good Maintainer?
-## Martine Lenders ([@miri64](https://github.com/miri64))
-## Hauke Petersen ([@haukepetersen](https://github.com/haukepetersen))
+# We'll be back after the break
 
----
-
-name: outline
-
-# Outline
-
-1. Introduction
-2. Maintainer Guidelines
-3. Interaction
-4. Discussion
-
----
-
-# Introduction
-
-* Goal: Make us all better maintainer
-  - Find minimum maintaining standards
-* Main objective of a maintainer: *Quality* assurance (review)
-  - *Code* Quality
-  - *Functionality*
-  - *Non-functional* qualities
-* Second objective: Help out contributors with their problems
-
----
-
-# Maintainer Guidelines
-
-* [Maintainer Guidelines @ GitHub Repo](https://ogithub.com/RIOT-OS/RIOT/blob/master/MAINTAINING.md)
-* Follow them step by step (skip steps if clearly unnecessary):
-
-  1. Fundamentals
-  2. Code design
-  3. Testing
-  4. Coding conventions
-  5. Documentation
-
-* Can always be adapted via PR (requires 2 ACKs!)
-
----
-
-# 1. Fundamentals
-
-1. Question the reasoning of the PR for yourself and in discussion with the
-   contributor
---
-
-2. Simplest solution possible?
---
-
-3. Should the PR be split?
---
-
-4. High-level design?
---
-
-5. Does it make sense?
---
-
-6. In conflict to existing concepts?
---
-
-7. Is it's structure valid
---
-
-8. Test descriptions or tests provided?
---
-
-9. Code compiles
---
-
-10. Rights of previous authors respected?
---
-
-11. Duplicate?
-
----
-
-# 2. Code design
-
-1. Code duplication
---
-
-2. Memory usage
---
-
-3. Check all code paths
---
-
-4. API compliance
---
-
-5. Consistency of error handling
---
-
-6. Variable and function scope
---
-
-7. Syntactical, semantical, or logical errors
---
-
-8. Runtime efficiency
---
-
-9. Simplicity of code design
-
----
-
-# 3. Testing
-
-- Run tests on native (if applicable) + few selected boards
-- Follow testing instructions given by PR (see 1.8)
-
-> Challenge them, be creative, try to break it 😉
-
----
-
-# The last mile
-
-### 4. Coding conventions
-- Can be *aided* by tools like `uncrustify` or `vera++`
-
---
-
-### 5. Documentation
-1. Module documentation
-2. Function-level documentation
-3. Understandable?
-4. Grammar and spelling mistakes
-
----
-
-# Interaction
-
-* Be *responsive*, be *helpful*, be *friendly*
-    - (See our [Code of Conduct](https://github.com/RIOT-OS/RIOT/blob/master/CODE_OF_CONDUCT.md))
-* Ask other maintainers for help for parts you don't know about
-* Mark in your ACK what you ACK'd
-
----
-
-class: middle center
-
-# Let's discuss!
-
-???
-
-TODO
-
-Thesen:
-
-- Beginner friendly vs sophistication?
-    - Newbies vs Industry integration?
-- Developer's creative freedom
-    - Rules vs "common" sense
-- Long discussions about academic problems (vs practical relevance?)
-    - (priority inversion?)
-- Common sense on feature selection
 
     </textarea>
     <script src="js/remark-0.14.0.min.js">
     </script>
     <script>
-      var slideshow = remark.create({ highlightStyle: "tomorrow-night" });
+      var slideshow = remark.create({ highlightStyle: "tomorrow-night",
+                                      ratio: "16:9"});
     </script>
   </body>
 </html>
