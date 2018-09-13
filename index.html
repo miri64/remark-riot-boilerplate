@@ -179,17 +179,84 @@ class: middle center
 
 ???
 
-TODO
+- might go a little ahead of maintainer plenum
+- Hauke's little rant-corner ;-)
 
-Thesen:
+---
 
-- Beginner friendly vs sophistication?
-    - Newbies vs Industry integration?
-- Developer's creative freedom
-    - Rules vs "common" sense
-- Long discussions about academic problems (vs practical relevance?)
-    - (priority inversion?)
-- Common sense on feature selection
+class: middle center
+
+# Efficiency vs. Beginner friendliness
+## Industry-grade Arduino?
+
+???
+
+- contradicting goal: industry grade OS but also beginner friendly as 
+e.g. Arduino
+- memory usage follows saw-tooth pattern, with an overall increasing 
+trend -> 8 bytes here, 24 bytes there, all minor but adding up
+
+Examples:
+- `netdev` discussion: additional function pointers vs. function overloading
+- board configuration (`periph_conf.h`): define base concept easier to 
+use, but did not scale
+
+-> make sure the impacts are well understood: i.e. code size and 
+runtime! benchmarks
+
+---
+
+class: middle center
+
+# Fuzzy RIOT
+## Are we killing the developers's creative freedom?
+
+???
+
+- style, structure, processes: tight rules in RIOT that have to be followed
+- why? -> maintainability, but also common look-and-feel
+But:
+- every programmer has his/her own ways to approach a problem!
+- hypothesis: a certain amount of personal 'handwriting' has no impact 
+on maintainability
+
+Goal:
+- speed up review process
+
+Solution: Staging?!
+
+Examples:
+- naming of modules: only have minimum compliance rules (e.g. don't use 
+completely missleading names)
+- does it really matter if there is 1 or 2 blank lines e.g. between the 
+last `#inlcude` and the first function def?
+- most of us are no native speakers, so do we want to give the 
+spelling/grammar/wording comments multiple iterations even if it is 
+clear what they mean in the first place?
+
+---
+
+class: middle center
+
+# “Academic Problem”
+## Judging the practical impact
+
+???
+
+- we have seen long and time-consuming discussions about problems which 
+exist on paper but with minor impact in practice
+- problem: hard to tell in times
+- perfectionism: 95%-5% rule, development time inverse proportional to 
+progress
+- proposal: judge practical impact of issues and adapt priority accordingly
+- don't get caught up in 'low-impact' discussions
+
+Examples:
+- re-factoring hell: change a module name every week just because one 
+likes the new name better...
+- priority inversion: well known problem in the space of real-time 
+systems, but does it really have a big impact on typical RIOT usage 
+scenarios?,
 
     </textarea>
     <script src="js/remark-0.14.0.min.js">
